@@ -1,0 +1,72 @@
+#studio h2::before {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+#studio h2::after {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+@keyframes spinning-flowers {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.story h2::after {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+.story__article::after {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+@keyframes spinning-flowers {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.oscars-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 67%;
+  padding: 100px 0;
+}
+.oscars-container h4 {
+  color: white;
+  font-size: 2.5rem;
+  background-image: url("img/orange_oscars.png");
+  background-color: #FFF5EA;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 50px 0;
+}
+
+.site-footer::before {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+.site-footer::after {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+.site-footer ul::after {
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+@keyframes spinning-flowers {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}/*# sourceMappingURL=style.css.map */

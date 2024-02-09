@@ -1,0 +1,110 @@
+.banner-video {
+  min-height: 806px;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  #background-video {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    object-fit: cover;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+  img {
+    margin-top: -10%;
+    width: 50%;
+  }
+}
+
+#studio {
+  h2 {
+    &::before {
+      animation: spinning-flowers 30s linear infinite;
+      transform-origin: center;
+    }
+    &::after {
+      animation: spinning-flowers 30s linear infinite;
+      transform-origin: center;
+    }
+  }
+  @keyframes spinning-flowers {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.story {
+  h2{
+    &::after {
+      animation: spinning-flowers 30s linear infinite;
+      transform-origin: center;
+    }
+  }
+
+  &__article {
+    &::after {
+      animation: spinning-flowers 30s linear infinite;
+      transform-origin: center;
+    }
+  }
+  @keyframes spinning-flowers {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+
+.oscars-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  width: 67%;
+  padding: 100px 0;
+
+  h4 {
+    // color: #FFF5EA;
+    color: white;
+    font-size: 2.5rem;
+    background-image: url("img/orange_oscars.png");
+    background-color: #FFF5EA;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 50px 0;
+  }
+}
+.site-footer {
+  &::before {
+    animation: spinning-flowers 30s linear infinite;
+    transform-origin: center;
+  }
+  &::after {
+    animation: spinning-flowers 30s linear infinite;
+    transform-origin: center;
+  }
+  ul{
+    &::after {
+      animation: spinning-flowers 30s linear infinite;
+      transform-origin: center;
+    }
+  }
+  @keyframes spinning-flowers {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
