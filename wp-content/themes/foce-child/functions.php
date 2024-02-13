@@ -1,13 +1,12 @@
 <?php
-// add_action('wp_enqueue_scripts', 'enqueue_jquery');
-// function enqueue_jquery() {
-//     wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', array(), '3.6.0', true);
-// }
-
-function bbx_enqueue_scripts() {
-    wp_enqueue_script( 'jquery' );
-    }
-add_action( 'wp_enqueue_scripts', 'bbx_enqueue_scripts' );
+// installation de Swiper JS
+add_action('wp_enqueue_scripts', 'enqueue_swiper_script');
+function enqueue_child_swiper_script() {
+    // Enregistrement du script Swiper.js
+    wp_register_script('swiper', get_template_directory_uri() . 'script.js', array(), '6.5.3', true); // Assurez-vous de vérifier la version
+    // Chargement du script Swiper.js
+    wp_enqueue_script('swiper');
+}
 
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );

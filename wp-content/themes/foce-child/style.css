@@ -1,20 +1,89 @@
-#studio h2::before {
-  animation: spinning-flowers 30s linear infinite;
-  transform-origin: center;
+.site {
+  position: relative;
 }
-#studio h2::after {
-  animation: spinning-flowers 30s linear infinite;
-  transform-origin: center;
+
+.banner {
+  position: relative;
+  background-image: unset !important;
 }
-@keyframes spinning-flowers {
-  from {
-    transform: rotate(0deg);
+.banner #background-video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  animation: fadeOut 1s;
+  transition: opacity 0.5s ease-out;
+}
+@keyframes fadeOut {
+  0% {
+    transform: translateY(-100px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateY(0);
+  }
+}
+.banner img {
+  animation: floating 3s ease-in-out infinite;
+  transform-origin: center;
+  z-index: 2;
+  top: 0;
+  left: 0;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(4) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(4) rotate(-1deg);
+  }
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  animation: fade-in 1s;
+}
+@keyframes fade-in {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 
+#characters h3 {
+  transition: 1s ease-in-out;
+}
+#characters .swiper {
+  width: 600px;
+  height: 300px;
+}
+
+#place {
+  background-image: url("img/Studio_Koukaki-image_place.png") !important;
+}
+
+h3 {
+  transition: 1s ease-in-out;
+}
+
+.cloud {
+  display: flex;
+  flex-direction: column;
+  filter: blur(10px);
+}
+
+.story h2 {
+  transition: 1s ease-in-out;
+}
 .story h2::after {
   animation: spinning-flowers 30s linear infinite;
   transform-origin: center;
@@ -23,7 +92,19 @@
   animation: spinning-flowers 30s linear infinite;
   transform-origin: center;
 }
-@keyframes spinning-flowers {
+
+#studio h2 {
+  overflow-y: hidden;
+  transition: 1s ease-in-out;
+}
+#studio h2::before {
+  animation: spinning-flowers 30s linear infinite;
+}
+#studio h2::after {
+  animation: spinning-flowers 30s linear infinite;
+}
+
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
@@ -31,32 +112,45 @@
     transform: rotate(360deg);
   }
 }
-
 .oscars-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin: auto;
-  width: 67%;
-  padding: 100px 0;
+  padding: 100px 0 0 0;
+}
+.oscars-container::before {
+  content: url("img/Sunflower.png");
+  position: absolute;
+  left: 6em;
+  top: 3450px;
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
+}
+.oscars-container::after {
+  content: url("img/orchid.png");
+  position: absolute;
+  right: -4em;
+  bottom: 600px;
+  animation: spinning-flowers 30s linear infinite;
+  transform-origin: center;
 }
 .oscars-container h4 {
-  color: white;
+  color: #FFF5EA;
   font-size: 2.5rem;
   background-image: url("img/orange_oscars.png");
   background-color: #FFF5EA;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 50px 0;
+  padding: 60px 80px;
 }
 
 .site-footer::before {
-  animation: spinning-flowers 30s linear infinite;
-  transform-origin: center;
+  content: none;
 }
 .site-footer::after {
-  animation: spinning-flowers 30s linear infinite;
-  transform-origin: center;
+  content: none;
 }
 .site-footer ul::after {
   animation: spinning-flowers 30s linear infinite;
