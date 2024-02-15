@@ -4,7 +4,7 @@
 
 .banner {
   position: relative;
-  background-image: unset !important;
+  animation: fadeOut 2s;
 }
 .banner #background-video {
   height: 100%;
@@ -15,8 +15,9 @@
   left: 0;
   top: 0;
   z-index: 1;
-  animation: fadeOut 1s;
-  transition: opacity 0.5s ease-out;
+  opacity: 0;
+  animation: fadeOut 2s;
+  transition: opacity 1s ease-out;
 }
 @keyframes fadeOut {
   0% {
@@ -36,18 +37,18 @@
 
 @keyframes floating {
   0% {
-    transform: translateY(4) rotate(-1deg);
+    transform: translateY(4px) rotate(-1deg);
   }
   50% {
     transform: translateY(-10px) rotate(1deg);
   }
   100% {
-    transform: translateY(4) rotate(-1deg);
+    transform: translateY(4px) rotate(-1deg);
   }
 }
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 2s ease-out;
   animation: fade-in 1s;
 }
 @keyframes fade-in {
@@ -59,12 +60,42 @@
   }
 }
 
-#characters h3 {
+h2,
+h3 {
+  overflow: hidden;
+}
+h2 .fade-title,
+h3 .fade-title {
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-30px);
+}
+h2 .fade-top,
+h3 .fade-top {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 1s ease;
+}
+
+#characters .main-character h3 {
   transition: 1s ease-in-out;
 }
-#characters .swiper {
-  width: 600px;
-  height: 300px;
+#characters swiper-container {
+  width: 100%;
+}
+#characters swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 400px;
+  height: 500px;
+  margin-right: 25px;
+}
+#characters swiper-slide img {
+  width: 400px;
+  height: 440px;
+}
+#characters swiper-slide p {
+  margin: 0;
 }
 
 #place {
@@ -104,14 +135,6 @@ h3 {
   animation: spinning-flowers 30s linear infinite;
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 .oscars-container {
   display: flex;
   align-items: center;
@@ -144,6 +167,7 @@ h3 {
   background-repeat: no-repeat;
   background-size: contain;
   padding: 60px 80px;
+  margin-bottom: 0;
 }
 
 .site-footer::before {

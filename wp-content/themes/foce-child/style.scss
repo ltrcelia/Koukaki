@@ -1,10 +1,10 @@
 .site {
   position: relative;
 }
-
 .banner {
     position: relative;
-    background-image: unset !important;
+    animation: fadeOut 2s;
+    // background-image: unset !important;
   #background-video {
     height: 100%;
     width: 100%;
@@ -13,8 +13,9 @@
     left: 0;
     top: 0;
     z-index: 1;
-    animation: fadeOut 1s;
-    transition: opacity 0.5s ease-out;
+    opacity: 0;
+    animation: fadeOut 2s;
+    transition: opacity 1s ease-out;
   }
   @keyframes fadeOut {
     0% {
@@ -34,19 +35,19 @@
 }
 @keyframes floating {
   0% {
-    transform: translateY(4) rotate(-1deg);
+    transform: translateY(4px) rotate(-1deg);
   }
   50% {
     transform: translateY(-10px) rotate(1deg);
   }
   100% {
-    transform: translateY(4) rotate(-1deg);
+    transform: translateY(4px) rotate(-1deg);
   }
 }
 
 .fade-in {
   opacity: 0;
-  transition: opacity 0.5s ease-out;
+  transition: opacity 2s ease-out;
   animation: fade-in 1s;
   @keyframes fade-in {
     0% {
@@ -58,15 +59,51 @@
   }
 }
 
-#characters {
-  h3 {
-    transition: 1s ease-in-out;
+
+// animations titres
+h2,
+h3 {
+  overflow: hidden;
+  .fade-title {
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-30px);
   }
-  .swiper {
-    width: 600px;
-    height: 300px;
+  .fade-top {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 1s ease;
   }
 }
+
+// *** // 
+
+
+#characters {
+  .main-character {
+    h3 {
+      transition: 1s ease-in-out;
+    }
+  }
+  swiper-container {
+    width: 100%;
+  }
+  swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 500px;
+    margin-right: 25px;
+    img {
+      width: 400px;
+      height: 440px;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
+
 
 #place {
   background-image: url("img/Studio_Koukaki-image_place.png") !important;
@@ -95,6 +132,8 @@ h3 {
     }
   }
 }
+
+
 #studio {
   h2 {
     overflow-y: hidden;
@@ -105,14 +144,6 @@ h3 {
     &::after {
       animation: spinning-flowers 30s linear infinite;
     }
-  }
-}
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -149,6 +180,7 @@ h3 {
     background-repeat: no-repeat;
     background-size: contain;
     padding: 60px 80px;
+    margin-bottom: 0;
   }
 }
 

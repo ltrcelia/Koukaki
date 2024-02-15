@@ -1,13 +1,12 @@
 <?php
 // installation de Swiper JS
-add_action('wp_enqueue_scripts', 'enqueue_swiper_script');
-function enqueue_child_swiper_script() {
-    // Enregistrement du script Swiper.js
-    wp_register_script('swiper', get_template_directory_uri() . 'script.js', array(), '6.5.3', true); // Assurez-vous de vérifier la version
-    // Chargement du script Swiper.js
-    wp_enqueue_script('swiper');
-}
-
+// add_action('wp_enqueue_scripts', 'enqueue_swiper_script');
+// function enqueue_child_swiper_script() {
+//     // Enregistrement du script Swiper.js
+//     wp_register_script('swiper', get_template_directory_uri() . 'script.js', array(), '6.5.3', true); // Assurez-vous de vérifier la version
+//     // Chargement du script Swiper.js
+//     wp_enqueue_script('swiper');
+// }
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
@@ -18,6 +17,8 @@ add_action('wp_enqueue_scripts', 'enqueue_child_theme_assets');
 function enqueue_child_theme_assets() {
     wp_enqueue_script('child-script', get_stylesheet_directory_uri() . '/script.js', array('jquery'), '1.0.0', true);
     wp_enqueue_style('child-style', get_template_directory_uri() . '/style.css', array(), '1.0');
+    wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), false, true);
+    wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), false, true);
 }
 
 
