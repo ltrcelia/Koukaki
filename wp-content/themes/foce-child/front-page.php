@@ -5,10 +5,10 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner">
-            <img src="wp-content/themes/foce-child/img/logo.png" data-parallax="0.2" id="picture" class="fade-in parallax" alt="logo Fleurs d'oranger & chats errants">
-            <!-- <video id="background-video" autoplay loop muted class="fade-out">
+            <img src="wp-content/themes/foce-child/img/logo.png" data-parallax="0.2" id="picture" class="fade-in parallax-image" alt="logo Fleurs d'oranger & chats errants">
+            <video id="background-video" autoplay loop muted class="fade-in parallax-video">
                 <source src="wp-content/themes/foce-child/img/video-koukaki.mp4" type="video/mp4">
-            </video> -->
+            </video>
         </section>
 
         <section id="story" class="story fade-in">
@@ -29,7 +29,9 @@ get_header();
             );
             $characters_query = new WP_Query($args);
             ?>
-            <article id="characters" class="fade-in">
+
+
+            <article id="characters">
                 <div class="main-character">
                     <h3>
                         <span class="fade-title">Les </span>
@@ -37,10 +39,12 @@ get_header();
                     </h3>
                     <?php get_template_part( 'characters' ); ?>
             </article>
-            <article id="place" class="fade-in">
+
+            
+            <article id="place">
                 <div>
-                <img src="wp-content/themes/foce-child/img/big_cloud.png" class="cloud" alt="Gros nuage">
-                <img src="wp-content/themes/foce-child/img/little_cloud.png" class="cloud" alt="Petit nuage">
+                <img src="wp-content/themes/foce-child/img/big_cloud.png" class="cloud big-cloud" alt="Gros nuage">
+                <img src="wp-content/themes/foce-child/img/little_cloud.png" class="cloud little-cloud" alt="Petit nuage">
                     <h3>
                         <span class="fade-title">Le </span>
                         <span class="fade-title">lieu</span>
