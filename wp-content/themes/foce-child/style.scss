@@ -5,7 +5,7 @@
 // section bannière
 .banner {
     position: relative;
-    // animation: fadeOut 2s;
+    animation: fade-out 2s;
     background-image: unset !important;
   #background-video {
     height: 100%;
@@ -14,29 +14,29 @@
     object-fit: cover;
     left: 0;
     top: 0;
-    z-index: 1;
-    opacity: 0;
-    animation: fadeOut 2s;
-    transition: opacity 1s ease-out;
+    z-index: 0;
+    animation: fade-out 2s;
   }
-  img {
-    animation: floating 3s ease-in-out infinite;
-    transform-origin: center;
+  div {
     z-index: 2;
     top: 0;
     left: 0;
+    animation: floating 3s ease-in-out infinite;
+    img {
+      transform-origin: center;
+      margin-top: -10%;
+      width: 90%;
+    }
   }
 }
 // ***** //
 
 
 .fade-in {
-  opacity: 0;
-  transition: opacity 2s ease-out;
-  animation: fade-in 1s;
+  animation: fade-in 2s;
 }
 .fade-top {
-  transform: translateY(0); /* Déplace initialement les titres vers le haut */
+  transform: translateY(300px); /* Déplace initialement les titres vers le haut */
   opacity: 1
 }
 
@@ -44,10 +44,11 @@
 // animations titres
 h2,
 h3 {
+  overflow: hidden;
+  text-align: center;
   .fade-title {
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    transform: translateY(calc(100vh - 100px)); 
-    opacity: 0;
+    transition: transform 0.7s ease;
+    position: absolute;
   }
 }
 // ***** //
@@ -71,18 +72,21 @@ h3 {
     }
   }
 }
+
 // ***** //
 
 
 //section personnages
 #characters {
   .main-character {
+    position: relative;
     h3 {
       transition: 1s ease-in-out;
     }
   }
   swiper-container {
     width: 100%;
+    margin-left: 0;
   }
   swiper-slide {
     background-position: center;
@@ -121,7 +125,6 @@ h3 {
 // section studio
 #studio {
   h2 {
-    overflow-y: hidden;
     transition: 1s ease-in-out;
     &::before {
       animation: spinning-flowers 30s linear infinite;
@@ -200,6 +203,16 @@ h3 {
 
 // ***** // 
 
+// media queries
+@media screen and (max-width: 768px) {
+  .banner {
+    background-image: url('./assets/images/banner.png');
+    video {
+      display: none;
+    }
+  }
+}
+// ***** // 
 
 // animations 
 @keyframes floating {
@@ -217,18 +230,22 @@ h3 {
 @keyframes fade-in {
   0% {
     transform: translateY(100px);
+    opacity: 0;
   }
   100% {
     transform: translateY(0px);
+    opacity: 1;
   }
 }
 
-@keyframes fadeOut {
+@keyframes fade-out {
   0% {
-    transform: translateY(-100px);
+    transform: translateY(-70px);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
@@ -251,4 +268,5 @@ h3 {
     transform: rotate(360deg);
   }
 }
+
 // ***** //

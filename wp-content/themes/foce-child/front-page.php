@@ -4,17 +4,19 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
+
         <section class="banner">
-            <img src="wp-content/themes/foce-child/img/logo.png" data-parallax="0.2" id="picture" class="fade-in parallax-image" alt="logo Fleurs d'oranger & chats errants">
-            <video id="background-video" autoplay loop muted class="fade-in parallax-video">
+            <div class="fade-in">
+                <img src="wp-content/themes/foce-child/img/logo.png" id="picture" alt="logo Fleurs d'oranger & chats errants">
+            </div>
+            <video id="background-video" autoplay loop muted class="parallax-video">
                 <source src="wp-content/themes/foce-child/img/video-koukaki.mp4" type="video/mp4">
             </video>
         </section>
 
         <section id="story" class="story fade-in">
-            <h2 class="flower">
-                <span class="fade-title">L'</span>
-                <span class="fade-title">histoire</span>
+            <h2>
+                <span class="fade-title">L'histoire</span>
             </h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
@@ -34,8 +36,7 @@ get_header();
             <article id="characters">
                 <div class="main-character">
                     <h3>
-                        <span class="fade-title">Les </span>
-                        <span class="fade-title">personnages</span>
+                        <span class="fade-title">Les personnages</span>
                     </h3>
                     <?php get_template_part( 'characters' ); ?>
             </article>
@@ -46,8 +47,7 @@ get_header();
                 <img src="wp-content/themes/foce-child/img/big_cloud.png" class="cloud big-cloud" alt="Gros nuage">
                 <img src="wp-content/themes/foce-child/img/little_cloud.png" class="cloud little-cloud" alt="Petit nuage">
                     <h3>
-                        <span class="fade-title">Le </span>
-                        <span class="fade-title">lieu</span>
+                        <span class="fade-title">Le lieu</span>
                     </h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
                 </div>
@@ -58,8 +58,7 @@ get_header();
 
         <section id="studio" class="fade-in">
             <h2>
-                <span class="fade-title">Studio </span>
-                <span class="fade-title">Koukaki</span>
+                <span class="fade-title">Studio Koukaki</span>
             </h2>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>

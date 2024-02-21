@@ -1,18 +1,43 @@
-// parallax 
+// parallax
+document.addEventListener('scroll', function() {
+  // console.log(document.documentElement.scrollTop);
+  let scrollPos = window.scrollY;
+  let parallaxImage = document.getElementById('picture');
+  let nextSection = document.getElementById('story');
+  
+  parallaxImage.style.transform = 'translateY(' + scrollPos * 0.5 + 'px)';
 
+  let parallaxImageBottom = parallaxImage.getBoundingClientRect().bottom;
+  let nextSectionTop = nextSection.getBoundingClientRect().top;
+  
+  if (parallaxImageBottom >= nextSectionTop) {
+    parallaxImage.style.transform = 'none';
+  }
+});
+// ***** // 
+
+
+// animation fleurs scroll
+document.addEventListener('scroll', function() {
+  let scrollPos = window.scrollY;
+
+});
+// ***** // 
 
 
 // animation fade-in sections
-
-window.addEventListener('scroll', () => {
-    const elements = document.querySelectorAll('.fade-in');
-    var fadeIn = () => {
-        elements.forEach(function(elem) {
-            elem.style.opacity = 1;
-        });
-    }; 
-    fadeIn();
-});
+document.addEventListener("DOMContentLoaded", (event) => {
+    const swiper = new Swiper('.mySwiper', {
+        loop: true,
+        autoplay: {
+            delay: 0,
+        },
+    });
+//     // const swiper = new Swiper(".mySwiper", {
+//     //     effect: "coverflow",
+//     //     grabCursor: true,
+//     //   });
+  });
 
 
 // annimations titres
@@ -25,11 +50,9 @@ const optionsTitle = {
 const titles = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('fade-top');
-            entry.target.style.opacity = 1;
+            entry.target.style.transform = "translateY(-40px)";
         } else {
-            entry.target.classList.remove('fade-top');
-            entry.target.style.opacity = 0;
+            entry.target.style.transform = "translateY(20px)";
         }
     });
   }, optionsTitle);
@@ -40,21 +63,12 @@ const titles = new IntersectionObserver(entries => {
 
 
 // animation loop carrousel
-const swiper = new Swiper('.sample-slider', {
-    loop: true,
-    autoplay: {
-        delay: 0,
-    },
-    speed: 3000,          //add
-    slidesPerView: 3,     //add
-});
 
-
-// animation fleurs scroll
 
 
 
 // animation nuages
+
 
 
 // menu burger 
