@@ -1,11 +1,17 @@
-@charset "UTF-8";
+:root {
+  --rotate: 20s;
+}
+
 .site {
   position: relative;
 }
 
 .banner {
   position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
   animation: fade-out 2s;
+  background-repeat: no-repeat;
   background-image: unset !important;
 }
 .banner #background-video {
@@ -16,7 +22,7 @@
      object-fit: cover;
   left: 0;
   top: 0;
-  z-index: 0;
+  z-index: 1;
   animation: fade-out 2s;
 }
 .banner div {
@@ -25,7 +31,8 @@
   left: 0;
   animation: floating 3s ease-in-out infinite;
 }
-.banner div img {
+.banner div #picture {
+  animation: fade-in 2s;
   transform-origin: center;
   margin-top: -10%;
   width: 90%;
@@ -35,83 +42,80 @@
   animation: fade-in 2s;
 }
 
-.fade-top {
-  transform: translateY(300px); /* Déplace initialement les titres vers le haut */
-  opacity: 1;
-}
-
-h2,
-h3 {
-  overflow: hidden;
-  text-align: center;
-}
 h2 .fade-title,
 h3 .fade-title {
-  transition: transform 0.7s ease;
-  position: absolute;
+  transition: transform 1s ease;
+  position: relative;
+  display: block;
+  transform: translateY(120px);
 }
 
-.story h2 {
-  transition: 1s ease-in-out;
+.story {
+  padding-top: 50px;
 }
 .story h2::after {
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
   transform-origin: center;
   width: 155px;
   height: 155px;
 }
 .story__article::after {
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
   transform-origin: center;
 }
 
-#characters .main-character {
-  position: relative;
+.story #characters .main-character h3 {
+  width: 70%;
 }
-#characters .main-character h3 {
-  transition: 1s ease-in-out;
+.story #characters .main-character .swiper {
+  transition: transform 2s ease-in-out;
+  width: 90%;
+  height: 100%;
 }
-#characters swiper-container {
-  width: 100%;
-  margin-left: 0;
+.story #characters .main-character .swiper-wrapper {
+  gap: 30px;
 }
-#characters swiper-slide {
-  background-position: center;
+.story #characters .main-character .swiper-slide {
+  background-position: left;
   background-size: cover;
   width: 400px;
-  height: 500px;
-  margin-right: 25px;
+  height: 400px;
 }
-#characters swiper-slide img {
-  width: 400px;
-  height: 440px;
-}
-#characters swiper-slide p {
+.story #characters .main-character .swiper-slide p {
   margin: 0;
+}
+.story #characters .main-character .swiper-slide img {
+  width: 100%;
+  height: 100%;
 }
 
 #place {
   background-image: url("img/Studio_Koukaki-image_place.png") !important;
 }
-#place h3 {
-  transition: 1s ease-in-out;
-}
 #place .cloud {
+  transition: transform 3s ease-in-out;
+  top: 0px;
   display: flex;
   flex-direction: column;
+  position: relative;
   filter: blur(10px);
 }
-
-#studio h2 {
-  transition: 1s ease-in-out;
+#place .big-cloud {
+  left: 800px;
 }
+#place .little-cloud {
+  left: 550px;
+}
+
 #studio h2::before {
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
+  transform-origin: center;
   width: 203px;
   height: 203px;
 }
 #studio h2::after {
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
+  transform-origin: center;
   width: 109px;
   height: 109px;
 }
@@ -128,7 +132,7 @@ h3 .fade-title {
   position: absolute;
   left: 6em;
   top: 3450px;
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
   transform-origin: center;
 }
 .oscars-container::after {
@@ -136,7 +140,7 @@ h3 .fade-title {
   position: absolute;
   right: -4em;
   bottom: 600px;
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
   transform-origin: center;
 }
 .oscars-container h4 {
@@ -158,16 +162,66 @@ h3 .fade-title {
   content: none;
 }
 .site-footer ul::after {
-  animation: spinning-flowers 30s linear infinite;
+  animation: spinning-flowers var(--rotate) linear infinite;
   transform-origin: center;
 }
 
-@media screen and (max-width: 768px) {
-  .banner {
-    background-image: url("./assets/images/banner.png");
+@media screen and (max-width: 1000px) {
+  .oscars-container h4 {
+    font-size: 25px !important;
+    padding: 40px 80px 60px 80px;
+    margin-top: 50px;
   }
-  .banner video {
+}
+@media screen and (max-width: 850px) {
+  .oscars-container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 720px) {
+  .banner {
+    background-image: url("./img/banner.png") !important;
+    background-size: cover;
+    min-height: 600px;
+  }
+  .banner #background-video {
     display: none;
+  }
+  #story .clouds {
+    display: none;
+  }
+  #characters {
+    margin: 0 !important;
+  }
+  #characters h3 {
+    margin-left: 300px;
+  }
+  #characters .swiper-slide {
+    height: 300px !important;
+  }
+  #characters .swiper-slide {
+    width: 400px !important;
+    height: 400px !important;
+  }
+  #characters .swiper-slide img {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  .oscars-container {
+    flex-direction: column;
+  }
+  .oscars-container::before {
+    left: 12em;
+    top: 3200px;
+  }
+  .oscars-container::after {
+    right: -6em;
+    bottom: 300px;
+  }
+  .oscars-container h4 {
+    font-size: 20px !important;
+    padding: 40px 80px 60px 80px;
+    margin-top: 50px;
   }
 }
 @keyframes floating {
@@ -199,16 +253,6 @@ h3 .fade-title {
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@keyframes fade-top {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
   }
 }
 @keyframes spinning-flowers {

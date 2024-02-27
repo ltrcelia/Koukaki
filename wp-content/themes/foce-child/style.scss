@@ -1,11 +1,18 @@
+// ****** général ******
+:root {
+  --rotate: 20s;
+}
 .site {
   position: relative;
 }
+// ***** //
 
-// section bannière
+// ****** section bannière ******
 .banner {
     position: relative;
+    object-fit: contain;
     animation: fade-out 2s;
+    background-repeat:no-repeat;
     background-image: unset !important;
   #background-video {
     height: 100%;
@@ -14,7 +21,7 @@
     object-fit: cover;
     left: 0;
     top: 0;
-    z-index: 0;
+    z-index: 1;
     animation: fade-out 2s;
   }
   div {
@@ -22,44 +29,41 @@
     top: 0;
     left: 0;
     animation: floating 3s ease-in-out infinite;
-    img {
-      transform-origin: center;
-      margin-top: -10%;
-      width: 90%;
+    #picture {
+      animation: fade-in 2s;
+        transform-origin: center;
+        margin-top: -10%;
+        width: 90%;
+      }
     }
   }
-}
 // ***** //
 
 
 .fade-in {
   animation: fade-in 2s;
 }
-.fade-top {
-  transform: translateY(300px); /* Déplace initialement les titres vers le haut */
-  opacity: 1
-}
 
 
-// animations titres
+// ****** animations titres ******
 h2,
 h3 {
-  overflow: hidden;
-  text-align: center;
   .fade-title {
-    transition: transform 0.7s ease;
-    position: absolute;
+    transition: transform 1s ease;
+    position: relative;
+    display: block;
+    transform: translateY(120px);
   }
 }
 // ***** //
 
 
-// section story
+// ****** section story ******
 .story {
+  padding-top: 50px;
   h2{
-    transition: 1s ease-in-out;
     &::after {
-      animation: spinning-flowers 30s linear infinite;
+      animation: spinning-flowers var(--rotate) linear infinite;
       transform-origin: center;
       width: 155px;
       height: 155px;
@@ -67,72 +71,79 @@ h3 {
   }
   &__article {
     &::after {
-      animation: spinning-flowers 30s linear infinite;
+      animation: spinning-flowers var(--rotate) linear infinite;
       transform-origin: center;
     }
   }
 }
-
 // ***** //
 
 
-//section personnages
-#characters {
+// ****** section personnages ******
+.story #characters {
   .main-character {
-    position: relative;
     h3 {
-      transition: 1s ease-in-out;
+      width: 70%;
+    }  
+    .swiper {
+    transition: transform 2s ease-in-out;
+    width: 90%;
+    height: 100%;
     }
-  }
-  swiper-container {
-    width: 100%;
-    margin-left: 0;
-  }
-  swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 400px;
-    height: 500px;
-    margin-right: 25px;
-    img {
+    .swiper-wrapper {
+      gap: 30px;
+    }
+    .swiper-slide {
+      background-position: left;
+      background-size: cover;
       width: 400px;
-      height: 440px;
+      height: 400px;
+        p {
+          margin: 0;
+        }
     }
-    p {
-      margin: 0;
+    .swiper-slide img {
+      width: 100%;
+      height: 100%;
     }
   }
 }
 // ***** //
 
 
-// section lieu
+// ****** section lieu ******
 #place {
   background-image: url("img/Studio_Koukaki-image_place.png") !important;
-  h3 {
-    transition: 1s ease-in-out;
-  }
   .cloud {
+    transition: transform 3s ease-in-out;
+    top: 0px;
     display: flex;
     flex-direction: column;
+    position:relative;
     filter: blur(10px);
   }
+  .big-cloud {
+    left: 800px;
+  }
+  .little-cloud {
+    left: 550px;
+  }
 }
-
 // ***** //
 
 
-// section studio
+// ****** section studio ******
 #studio {
   h2 {
-    transition: 1s ease-in-out;
     &::before {
-      animation: spinning-flowers 30s linear infinite;
+      animation: spinning-flowers var(--rotate) linear infinite;
+      transform-origin: center;
       width: 203px;
       height: 203px;
     }
     &::after {
-      animation: spinning-flowers 30s linear infinite;
+      animation: spinning-flowers var(--rotate) linear infinite;
+      transform-origin: center;
       width: 109px;
       height: 109px;
     }
@@ -141,7 +152,7 @@ h3 {
 // ***** //
 
 
-// section oscars
+// ****** section oscars ******
 .oscars-container {
   display: flex;
   align-items:center;
@@ -153,7 +164,7 @@ h3 {
     position: absolute;
     left: 6em;
     top: 3450px;
-    animation: spinning-flowers 30s linear infinite;
+    animation: spinning-flowers var(--rotate) linear infinite;
     transform-origin: center;
   }
   &::after {
@@ -161,10 +172,9 @@ h3 {
     position: absolute;
     right: -4em;
     bottom: 600px;
-    animation: spinning-flowers 30s linear infinite;
+    animation: spinning-flowers var(--rotate) linear infinite;
     transform-origin: center;
   }
-
   h4 {
     color: #FFF5EA;
     font-size: 2.5rem;
@@ -180,7 +190,7 @@ h3 {
 // ***** //
 
 
-// footer 
+// ****** footer ****** 
 .site-footer {
   &::before {
     content: none;
@@ -190,7 +200,7 @@ h3 {
   }
   ul{
     &::after {
-      animation: spinning-flowers 30s linear infinite;
+      animation: spinning-flowers var(--rotate) linear infinite;
       transform-origin: center;
     }
   }
@@ -198,23 +208,83 @@ h3 {
 // ***** //
 
 
-// menu burger 
+// ****** menu burger ******
 
 
 // ***** // 
 
-// media queries
-@media screen and (max-width: 768px) {
+
+// ****** media queries ******
+@media screen and (max-width: 1000px) {
+  .oscars-container {
+    h4 {
+      font-size: 25px !important;
+      padding: 40px 80px 60px 80px;
+      margin-top: 50px;
+    }
+  }
+}
+@media screen and (max-width: 850px) {
+  .oscars-container {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 720px) {
   .banner {
-    background-image: url('./assets/images/banner.png');
-    video {
+    background-image: url('./img/banner.png') !important;
+    background-size: cover;
+    min-height: 600px;
+    #background-video {
       display: none;
+    }
+  }
+
+  #story {
+    .clouds {
+      display: none;
+    }
+  }
+
+  #characters {
+    margin: 0 !important;
+    h3 {
+      margin-left: 300px;
+    }
+    .swiper-slide {
+     height: 300px !important;
+    }
+    .swiper-slide {
+      width: 400px !important;
+      height: 400px !important;
+      img {
+        width: 300px !important;
+        height: 300px !important;
+      }
+    }
+  }
+
+  .oscars-container {
+    flex-direction: column;
+    &::before {
+      left: 12em;
+      top: 3200px;
+    }
+    &::after {
+      right: -6em;
+      bottom: 300px;
+    }
+    h4 {
+      font-size: 20px !important;
+      padding: 40px 80px 60px 80px;
+      margin-top: 50px;
     }
   }
 }
 // ***** // 
 
-// animations 
+
+// ****** animations ******
 @keyframes floating {
   0% {
     transform: translateY(4px) rotate(-1deg);
@@ -249,17 +319,6 @@ h3 {
   }
 }
 
-@keyframes fade-top {
-  0% {
-    opacity: 0;
-    transform: translateY(100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-
 @keyframes spinning-flowers {
   from {
     transform: rotate(0deg);
@@ -268,5 +327,4 @@ h3 {
     transform: rotate(360deg);
   }
 }
-
 // ***** //

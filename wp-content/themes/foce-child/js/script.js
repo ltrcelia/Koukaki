@@ -1,74 +1,72 @@
-// parallax
+// ***** parallax *****
 document.addEventListener('scroll', function() {
-  // console.log(document.documentElement.scrollTop);
   let scrollPos = window.scrollY;
   let parallaxImage = document.getElementById('picture');
-  let nextSection = document.getElementById('story');
-  
-  parallaxImage.style.transform = 'translateY(' + scrollPos * 0.5 + 'px)';
-
   let parallaxImageBottom = parallaxImage.getBoundingClientRect().bottom;
-  let nextSectionTop = nextSection.getBoundingClientRect().top;
   
-  if (parallaxImageBottom >= nextSectionTop) {
-    parallaxImage.style.transform = 'none';
+  if (parallaxImageBottom > 455) {
+    parallaxImage.style.transform = 'translateY(' + scrollPos * 0.5 + 'px)';
   }
 });
 // ***** // 
 
 
-// animation fleurs scroll
+// ***** animations titres *****
 document.addEventListener('scroll', function() {
-  let scrollPos = window.scrollY;
+  // console.log(document.documentElement.scrollTop);
+  const fadeTitles = document.querySelectorAll('.fade-title');
+  
+  fadeTitles.forEach(index => {
+    // console.log(index.getBoundingClientRect().bottom);
+    if (index.getBoundingClientRect().bottom <= 1030) {
+      index.style.transform = 'translateY(0px)';
+      // console.log('demo');
+    }
+  });
+});
+// ***** //
 
+
+// ***** animation loop carrousel *****
+document.addEventListener("DOMContentLoaded", (event) => {
+
+  let swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    autoplay: {
+      delay: 4000,
+    },
+    coverflowEffect: {
+      rotate: 30,
+      stretch: 3,
+      scale: 0.9,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+  });
 });
 // ***** // 
 
 
-// animation fade-in sections
-document.addEventListener("DOMContentLoaded", (event) => {
-    const swiper = new Swiper('.mySwiper', {
-        loop: true,
-        autoplay: {
-            delay: 0,
-        },
-    });
-//     // const swiper = new Swiper(".mySwiper", {
-//     //     effect: "coverflow",
-//     //     grabCursor: true,
-//     //   });
-  });
+// ***** animation nuages *****
+window.addEventListener('scroll', function() {
+	let scrollClouds = document.querySelector('.clouds');
+
+	let topClouds = scrollClouds.offsetTop; 
+  let animationClouds  = topClouds + 500;
+
+	if (window.scrollY >= animationClouds) {
+		let moveCloud = Math.min(300, window.scrollY  - animationClouds );
+		scrollClouds.style.transform = 'translateX(-' + moveCloud  + 'px)';
+	}
+ });
+
+// ***** // 
 
 
-// annimations titres
-const fadeTitles = document.querySelectorAll('.fade-title');
-const optionsTitle = {
-    root: null, 
-    rootMargin: '0px',
-    threshold: 0.5
-  };
-const titles = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.transform = "translateY(-40px)";
-        } else {
-            entry.target.style.transform = "translateY(20px)";
-        }
-    });
-  }, optionsTitle);
+// ***** menu burger *****
 
-  fadeTitles.forEach(title => {
-    titles.observe(title);
-  });
-
-
-// animation loop carrousel
-
-
-
-
-// animation nuages
-
-
-
-// menu burger 
+// ***** //

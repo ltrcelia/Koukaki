@@ -1,43 +1,42 @@
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
-<swiper-container class="mySwiper" grab-cursor="true" centered-slides="true"
-    slides-per-view="auto">
-    <swiper-slide>
-    <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Kawaneko.png" alt="Image de Kawaneko">
-    <p>Kawaneko</p>
-    </swiper-slide>
-    <swiper-slide>
-    <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Orenjiiro-1.png" alt="Image de Orenjiro">
-    <p>Orenjiro</p>
-    </swiper-slide>
-    <swiper-slide>
-    <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Pinku-1.png" alt="Image de Pinku">
-    <p>Pinku</p>
-    </swiper-slide>
-    <swiper-slide>
-    <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Tenshi-1.png" alt="Image de Tenshi">
-    <p>Tenshi</p>
-    </swiper-slide>
-    <swiper-slide>
-    <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Jaakuna-1.png" alt="Image de Jaakuna">
-    <p>Jaakuna</p>
-  </swiper-container>
+<?php
+            $args = array(
+                'post_type' => 'characters',
+                'posts_per_page' => -1,
+                'meta_key'  => '_main_char_field',
+                'orderby'   => 'meta_value_num',
 
-  <!-- <div class="swiper mySwiper">
+            );
+            $characters_query = new WP_Query($args);
+            ?>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+  <div class="swiper mySwiper">
+
     <div class="swiper-wrapper">
+
       <div class="swiper-slide">
       <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Kawaneko.png" alt="Image de Kawaneko">
-      </div>
-      <div class="swiper-slide">
-      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Orenjiiro-1.png" alt="Image de Orenjiro">
-      </div>
-      <div class="swiper-slide">
-      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Pinku-1.png" alt="Image de Pinku">
-      </div>
-      <div class="swiper-slide">
-      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Tenshi-1.png" alt="Image de Tenshi">
-      </div>
-      <div class="swiper-slide">
-      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Jaakuna-1.png" alt="Image de Jaakuna">
+      <p>Kawaneko</p>
       </div>
 
-    </div> -->
+      <div class="swiper-slide">
+      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Orenjiiro-1.png" alt="Image de Orenjiro">
+      <p>Orenjiro</p>
+      </div>
+
+      <div class="swiper-slide">
+      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Pinku-1.png" alt="Image de Pinku">
+      <p>Pinku</p>
+      </div>
+
+      <div class="swiper-slide">
+      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Tenshi-1.png" alt="Image de Tenshi">
+      <p>Tenshi</p>
+      </div>
+      
+      <div class="swiper-slide">
+      <img src="http://localhost:8888/Koukaki/wp-content/uploads/2022/06/Jaakuna-1.png" alt="Image de Jaakuna">
+      <p>Jaakuna</p>
+      </div>
+
+    </div>
