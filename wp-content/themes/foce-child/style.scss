@@ -34,7 +34,7 @@
       animation: fade-in 2s;
         transform-origin: center;
         margin-top: -10%;
-        width: 90%;
+        width: 100%;
       }
     }
   }
@@ -61,7 +61,7 @@ h3 {
 
 // ****** section story ******
 .story {
-  padding-top: 50px;
+  margin-top: 50px;
   h2{
     &::after {
       animation: spinning-flowers var(--rotate) linear infinite;
@@ -74,7 +74,11 @@ h3 {
     &::after {
       animation: spinning-flowers var(--rotate) linear infinite;
       transform-origin: center;
+      // top: 7em !important;
     }
+    // &::before {
+    //   top: 13em !important;
+    // }
   }
 }
 // ***** //
@@ -163,6 +167,11 @@ h3 {
       height: 109px;
     }
   }
+  p {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: -0.3px;
+  }
 }
 // ***** //
 
@@ -178,15 +187,15 @@ h3 {
     content: url('img/Sunflower.png');
     position: absolute;
     left: 6em;
-    top: 3450px;
+    bottom: 35em;
     animation: spinning-flowers var(--rotate) linear infinite;
     transform-origin: center;
   }
   &::after {
     content: url('img/orchid.png');
     position: absolute;
-    right: -4em;
-    bottom: 600px;
+    right: -5em;
+    bottom: 40em;
     animation: spinning-flowers var(--rotate) linear infinite;
     transform-origin: center;
   }
@@ -236,13 +245,13 @@ h3 {
   order: 2;
   margin: 0;
   padding: 0;
-  height: 85px;
+  height: 80px;
   margin-right: 100px;
   cursor: pointer;
     span {
     height: 2px;
-    width: 30px;
-    margin-block: 5px;
+    width: 40px;
+    margin-block: 8px;
     list-style: none;
     border-radius: 5px;
     transition: 0.3s ease;
