@@ -1,11 +1,12 @@
 // ****** général ******
 :root {
-  --rotate: 20s;
+  --rotate: 30s;
 }
 .site {
   position: relative;
 }
 // ***** //
+
 
 // ****** section bannière ******
 .banner {
@@ -52,7 +53,7 @@ h3 {
     transition: transform 1s ease;
     position: relative;
     display: block;
-    transform: translateY(120px);
+    transform: translateY(70px);
   }
 }
 // ***** //
@@ -91,7 +92,7 @@ h3 {
     height: 100%;
     }
     .swiper-wrapper {
-      gap: 30px;
+      gap: 10px;
     }
     .swiper-slide {
       background-position: left;
@@ -112,23 +113,37 @@ h3 {
 
 
 // ****** section lieu ******
-#place {
-  background-image: url("img/Studio_Koukaki-image_place.png") !important;
-  .cloud {
-    transition: transform 3s ease-in-out;
-    top: 0px;
-    display: flex;
-    flex-direction: column;
-    position:relative;
-    filter: blur(10px);
-  }
-  .big-cloud {
-    left: 800px;
-  }
-  .little-cloud {
-    left: 550px;
+.story {
+    #place {
+    background-image: url("img/Studio_Koukaki-image_place.png") !important;
+    div {
+      max-width: 500px;
+      margin-top: -6em;
+      margin-left: 8em;
+      p {
+        margin-top: 30px;
+        line-height: 25px;
+        letter-spacing: -0.3px;
+      }
+      .cloud {
+      transition: transform 0.3s ease-in-out;
+      top: 90px;
+      display: flex;
+      flex-direction: column;
+      position:relative;
+      filter: blur(10px);
+    }
+    .big-cloud {
+      left: 800px;
+    }
+    .little-cloud {
+      left: 550px;
+    }
+    }
+    
   }
 }
+
 // ***** //
 
 
@@ -183,7 +198,7 @@ h3 {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 60px 80px;
+    padding: 50px 80px;
     margin-bottom: 0;
   }
 }
@@ -209,9 +224,164 @@ h3 {
 
 
 // ****** menu burger ******
-
-
-// ***** // 
+#site-navigation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  ul {
+    margin: 0 auto;
+  }
+  .menu-toggle {
+  display: block;
+  order: 2;
+  margin: 0;
+  padding: 0;
+  height: 85px;
+  margin-right: 100px;
+  cursor: pointer;
+    span {
+    height: 2px;
+    width: 30px;
+    margin-block: 5px;
+    list-style: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    }
+    &.active span {
+      margin-block: -2px;
+    }
+    &.active span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    &.active span:nth-child(2) {
+      opacity: 0;
+    }
+    &.active span:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}
+  #menu-burger {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 2;
+    background: #fff5e9;
+    &.open {
+      opacity: 1;
+      animation: fade-out 1s ease-in-out;
+    }
+    .navigation {
+      position: relative;
+      display: flex;
+      height: 80px;
+      background: #ffd5a2;
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+    }
+    #logo {
+      display: block;
+      position: absolute;
+      width: 13%;
+      top: 3%;
+      filter: drop-shadow(0px 0px 10px #FF5C00);
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li {
+        text-align: center;
+        margin-bottom: 25px;
+        a {
+          text-decoration: none;
+          color: black;
+          font-size: 55px;
+          &:hover {
+            text-shadow: 0px 0px 14px #FF5C00;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+    p {
+      position: absolute;
+      text-transform: uppercase;
+      bottom: 10%;
+    }
+    img {
+      position: absolute;
+    }
+    .blue-cat {
+      width: 110px;
+      height: 100px;
+      top: 23%;
+      left: 20%;
+      animation: floating 2s ease-in-out infinite;
+    }
+    .yellow-cat {
+      width: 105px;
+      height: 95px;
+      bottom: 20%;
+      left: 4%;
+      animation: floating 3s ease-in-out infinite;
+    }
+    .black-cat {
+      width: 154px;
+      height: 147px;
+      top: 50%;
+      right: 15%;
+      animation: floating 4s ease-in-out infinite;
+    }
+    .orchid {
+      top: 7%;
+      left: -4%;
+      animation: spinning-flowers 20s linear infinite;
+    }
+    .flower {
+      width: 5%;
+      top: 50%;
+      left: 15%;
+      animation: spinning-flowers 15s linear infinite;
+    }
+    .sunflower {
+      top: 10%;
+      right: 15%;
+      animation: spinning-flowers 25s linear infinite;
+    }
+    .random-flower {
+      width: 5%;
+      top: 40%;
+      right: -2%;
+      animation: spinning-flowers 7s linear infinite;
+    }
+    .hibiscus {
+      width: 30%;
+      bottom: -15%;
+      right: -15%;
+      animation: spinning-flowers 20s linear infinite;
+    }
+  }
+  
+// ****** animations titres menu ******
+.fade-titles {
+  transition: transform 0.5s ease-out, opacity 0.3s ease;
+  position: relative;
+  display: block;
+  transform: translateY(20px);
+  opacity: 0;
+}
+.fade-titles.visible {
+  transform: translateY(0px);
+  opacity: 1;
+}
+// ***** //
 
 
 // ****** media queries ******
@@ -223,7 +393,24 @@ h3 {
       margin-top: 50px;
     }
   }
+  #menu-burger {
+    .hibiscus {
+    bottom: -15%;
+  }
+  }
 }
+
+@media screen and (max-width: 921px) {
+  .story {
+    #place {
+      div {
+        margin-top: 2em;
+        margin-left: 6em;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 850px) {
   .oscars-container {
     flex-direction: column;
@@ -231,6 +418,14 @@ h3 {
 }
 
 @media screen and (max-width: 720px) {
+  #site-navigation {
+    padding: 0px;
+    justify-content: center;
+    .menu-toggle {
+    margin: auto;
+    }
+  }
+  
   .banner {
     background-image: url('./img/banner.png') !important;
     background-size: cover;
@@ -241,8 +436,14 @@ h3 {
   }
 
   #story {
-    .clouds {
-      display: none;
+    #place {
+      div {
+        margin-top: 15em;
+        margin-left: 2em;
+      }
+      .clouds {
+        display: none;
+      }
     }
   }
 
@@ -265,19 +466,55 @@ h3 {
   }
 
   .oscars-container {
+    padding: 0;
     flex-direction: column;
     &::before {
-      left: 12em;
-      top: 3200px;
+      display: none;
     }
     &::after {
-      right: -6em;
-      bottom: 300px;
+      display: none;
     }
     h4 {
       font-size: 20px !important;
       padding: 40px 80px 60px 80px;
       margin-top: 50px;
+    }
+  }
+
+  #menu-burger {
+    #logo {
+      width: 20%;
+    }
+    a {
+      font-size: 30px !important;
+    }
+    .orchid {
+      left: -10%;
+    }
+    .hibiscus {
+      bottom: -5%;
+    }
+    .black-cat {
+      right: 0%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  h2,
+  h3 {
+    font-size: 2em;
+  }
+  #menu-burger {
+    #logo {
+      width: 30%;
+    }
+  }
+
+  .oscars-container {
+    h4 {
+    font-size: 16px !important;
+    padding: 30px 40px 60px 60px;
     }
   }
 }
@@ -328,3 +565,9 @@ h3 {
   }
 }
 // ***** //
+
+// // ****** importations fichiers scss ******
+// @import "menu-burger";
+// @import "media-queries";
+// @import "animations";
+// // ***** //

@@ -1,5 +1,5 @@
-// ***** parallax *****
-document.addEventListener('scroll', function() {
+// ***** parallax ***** //
+document.addEventListener('scroll', () => {
   let scrollPos = window.scrollY;
   let parallaxImage = document.getElementById('picture');
   let parallaxImageBottom = parallaxImage.getBoundingClientRect().bottom;
@@ -11,8 +11,8 @@ document.addEventListener('scroll', function() {
 // ***** // 
 
 
-// ***** animations titres *****
-document.addEventListener('scroll', function() {
+// ***** animations titres ***** //
+document.addEventListener('scroll', ()  => {
   // console.log(document.documentElement.scrollTop);
   const fadeTitles = document.querySelectorAll('.fade-title');
   
@@ -27,7 +27,7 @@ document.addEventListener('scroll', function() {
 // ***** //
 
 
-// ***** animation loop carrousel *****
+// ***** animation loop carrousel ***** //
 document.addEventListener("DOMContentLoaded", (event) => {
 
   let swiper = new Swiper(".mySwiper", {
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     centeredSlides: true,
     slidesPerView: "auto",
     autoplay: {
-      delay: 4000,
+      delay: 3000,
     },
     coverflowEffect: {
       rotate: 30,
@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 // ***** // 
 
 
-// ***** animation nuages *****
-window.addEventListener('scroll', function() {
+// ***** animation nuages ***** //
+window.addEventListener('scroll', () => {
 	let scrollClouds = document.querySelector('.clouds');
 
 	let topClouds = scrollClouds.offsetTop; 
@@ -63,10 +63,54 @@ window.addEventListener('scroll', function() {
 		scrollClouds.style.transform = 'translateX(-' + moveCloud  + 'px)';
 	}
  });
-
 // ***** // 
 
 
-// ***** menu burger *****
+// ***** menu burger ***** //
+const btnBurger = document.getElementById('btn');
+const menuBurger = document.getElementById('menu-burger');
+const menuLiens = document.querySelectorAll('a');
 
+// ouverture menu burger
+btnBurger.addEventListener('click', () => {
+    btnBurger.classList.toggle('active');
+    menuBurger.classList.toggle('open');
+});
+// liens actifs
+menuLiens.forEach(link => {
+  link.addEventListener('click', () => {
+    btnBurger.classList.remove('active');
+    menuBurger.classList.remove('open');
+  });
+});
+
+// animation titres fade-in
+document.addEventListener('DOMContentLoaded', () =>  {
+  const btnBurger = document.getElementById('btn');
+  const titles = document.querySelectorAll('.fade-titles');
+
+  btnBurger.addEventListener('click', () => {
+    setTimeout(() => {
+        titles.forEach((title, index) => {
+            setTimeout(() => {
+                title.classList.add('visible');
+            }, index * 100);
+        });
+    }, 1000);
+  });
+});
+
+// enlever le toggled qui pose probleme
+document.addEventListener('DOMContentLoaded', () => {
+  let btnBurger = document.getElementById('btn');
+
+  if (btnBurger) {
+      btnBurger.addEventListener('click', () => {
+          let mainNavigation = document.querySelector('.main-navigation');
+          if (mainNavigation.classList.contains('toggled')) {
+              mainNavigation.classList.remove('toggled');
+          }
+      });
+  }
+});
 // ***** //

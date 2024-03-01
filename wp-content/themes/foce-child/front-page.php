@@ -15,20 +15,19 @@ get_header();
         </section>
 
         <section id="story" class="story fade-in">
-            <h2><span class="fade-title">L'histoire</span></h2>
 
+            <h2><span class="fade-title">L'histoire</span></h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>
 
-            <article id="characters" class="fade-in">
-                
+            <article id="characters" >
                 <div class="main-character">
                     <h3><span class="fade-title">Les personnages</span></h3>
                     <?php get_template_part( 'characters' ); ?>
             </article>
             
-            <article id="place" class="fade-in">
+            <article id="place">
                 <div>
                     <div class="clouds">
                         <img src="wp-content/themes/foce-child/img/big_cloud.png" class="cloud big-cloud" alt="Gros nuage">
@@ -36,7 +35,6 @@ get_header();
                     </div>
                     <h3><span class="fade-title">Le lieu</span></h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
-                    
                 </div>
             </article>
 
@@ -52,7 +50,7 @@ get_header();
 
             <?php get_template_part( 'oscars' ); ?>
 
-    </main><!-- #main -->
+    </main>
 
 <?php
 get_footer();

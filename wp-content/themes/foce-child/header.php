@@ -28,15 +28,45 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'foce' ); ?></a>
 
 	<header id="masthead" class="site-header">
+
 		<nav id="site-navigation" class="main-navigation">
-            <button id="btn" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+
+            <button id="btn" class="menu-toggle"> 
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
             </button>
+
             <ul>
                 <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
             </ul>
 
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+		</nav>
+
+		<div id="menu-burger" class="hidden">
+
+				<img id="logo" src="wp-content/themes/foce-child/img/logo.png" alt="logo Fleurs d'oranger & chats errants">
+
+				<!-- fleurs -->
+				<img class="flowers orchid" src="wp-content/themes/foce-child/img/orchid.png" alt="Dessin d'orchidée">
+				<img class="flowers flower" src="wp-content/themes/foce-child/img/flower.png" alt="Dessin d'une fleur">
+				<img class="flowers sunflower" src="wp-content/themes/foce-child/img/sunflower.png" alt="Dessin d'un tournesol">
+				<img class="flowers random-flower" src="wp-content/themes/foce-child/img/random_flower.png" alt="Dessin d'une fleur">
+				<img class="flowers hibiscus" src="wp-content/themes/foce-child/img/Hibiscus.png" alt="Dessin d'un hibiscus">
+
+				<!-- chats -->
+				<img class="cat blue-cat" src="wp-content/themes/foce-child/img/blue-cat.png" alt="Image de Kawaneko">
+				<img class="cat yellow-cat" src="wp-content/themes/foce-child/img/yellow-cat.png" alt="Image de Tenshi">
+				<img class="cat black-cat" src="wp-content/themes/foce-child/img/black-cat.png" alt="Image de Jaakuna">
+				
+				<ul>
+					<li><a class="fade-titles" href="#story">Histoire</a></li>
+					<li><a class="fade-titles" href="#characters">Personnages</a></li>
+					<li><a class="fade-titles" href="#place">Lieu</a></li>
+					<li><a class="fade-titles" href="#studio">Studio Koukaki</a></li>
+				</ul>
+
+				<p>Studio Koukaki</p>
+
+			</div>
+	</header>

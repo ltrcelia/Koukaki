@@ -180,6 +180,7 @@ h3 .fade-title {
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
 }
 #site-navigation ul {
   margin: 0 auto;
@@ -189,7 +190,7 @@ h3 .fade-title {
   order: 2;
   margin: 0;
   padding: 0;
-  height: 85px;
+  height: 30px;
   margin-right: 100px;
   cursor: pointer;
 }
@@ -202,7 +203,7 @@ h3 .fade-title {
   transition: 0.3s ease;
 }
 #site-navigation .menu-toggle.active span {
-  margin-block: -2px;
+  position: absolute;
 }
 #site-navigation .menu-toggle.active span:nth-child(1) {
   transform: rotate(45deg);
@@ -316,9 +317,9 @@ h3 .fade-title {
   animation: spinning-flowers 7s linear infinite;
 }
 #menu-burger .hibiscus {
-  width: 30%;
-  bottom: -15%;
-  right: -15%;
+  width: 40%;
+  bottom: -28%;
+  right: -20%;
   animation: spinning-flowers 20s linear infinite;
 }
 
@@ -358,7 +359,7 @@ h3 .fade-title {
 }
 @media screen and (max-width: 720px) {
   #site-navigation {
-    padding: 0px;
+    padding: 15px;
     justify-content: center;
   }
   #site-navigation .menu-toggle {
@@ -431,9 +432,6 @@ h3 .fade-title {
   h2,
   h3 {
     font-size: 2em;
-  }
-  #menu-burger #logo {
-    width: 30%;
   }
   .oscars-container h4 {
     font-size: 16px !important;

@@ -1,0 +1,130 @@
+// ****** media queries ******
+@media screen and (max-width: 1000px) {
+    .oscars-container {
+      h4 {
+        font-size: 25px !important;
+        padding: 40px 80px 60px 80px;
+        margin-top: 50px;
+      }
+    }
+    #menu-burger {
+      .hibiscus {
+      bottom: -15%;
+    }
+    }
+  }
+  
+  @media screen and (max-width: 921px) {
+    .story {
+      #place {
+        div {
+          margin-top: 2em;
+          margin-left: 6em;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 850px) {
+    .oscars-container {
+      flex-direction: column;
+    }
+  }
+  
+  @media screen and (max-width: 720px) {
+    #site-navigation {
+      padding: 15px;
+      justify-content: center;
+      .menu-toggle {
+      margin: auto;
+      }
+    }
+    
+    .banner {
+      background-image: url('./img/banner.png') !important;
+      background-size: cover;
+      min-height: 600px;
+      #background-video {
+        display: none;
+      }
+    }
+  
+    #story {
+      #place {
+        div {
+          margin-top: 15em;
+          margin-left: 2em;
+        }
+        .clouds {
+          display: none;
+        }
+      }
+    }
+  
+    #characters {
+      margin: 0 !important;
+      h3 {
+        margin-left: 300px;
+      }
+      .swiper-slide {
+       height: 300px !important;
+      }
+      .swiper-slide {
+        width: 400px !important;
+        height: 400px !important;
+        img {
+          width: 300px !important;
+          height: 300px !important;
+        }
+      }
+    }
+  
+    .oscars-container {
+      padding: 0;
+      flex-direction: column;
+      &::before {
+        display: none;
+      }
+      &::after {
+        display: none;
+      }
+      h4 {
+        font-size: 20px !important;
+        padding: 40px 80px 60px 80px;
+        margin-top: 50px;
+      }
+    }
+  
+    #menu-burger {
+      #logo {
+        width: 20%;
+      }
+      a {
+        font-size: 30px !important;
+      }
+      .orchid {
+        left: -10%;
+      }
+      .hibiscus {
+        bottom: -5%;
+      }
+      .black-cat {
+        right: 0%;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    h2,
+    h3 {
+      font-size: 2em;
+    }
+  
+    .oscars-container {
+      h4 {
+      font-size: 16px !important;
+      padding: 30px 40px 60px 60px;
+      }
+    }
+  }
+  // ***** // 
