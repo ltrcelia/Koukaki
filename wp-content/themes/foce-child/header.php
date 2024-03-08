@@ -43,7 +43,7 @@
 
 		</nav>
 
-		<div id="menu-burger" class="hidden">
+		<div id="menu-burger">
 
 				<img id="logo" src="wp-content/themes/foce-child/img/logo.png" alt="logo Fleurs d'oranger & chats errants">
 
