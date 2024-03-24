@@ -52,9 +52,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 // ***** animation nuages ***** //
-window.addEventListener('scroll', () => {
+document.addEventListener('scroll', () => {
 	let scrollClouds = document.querySelector('.clouds');
-
 	let topClouds = scrollClouds.offsetTop; 
   let animationClouds  = topClouds + 500;
 

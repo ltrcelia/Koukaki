@@ -343,6 +343,45 @@ h3 .fade-title {
   opacity: 1;
 }
 
+@keyframes floating {
+  0% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  100% {
+    transform: translateY(4px) rotate(-1deg);
+  }
+}
+@keyframes fade-in {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes fade-out {
+  0% {
+    transform: translateY(-70px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes spinning-flowers {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 @media screen and (max-width: 1000px) {
   .oscars-container h4 {
     font-size: 25px !important;
@@ -443,44 +482,5 @@ h3 .fade-title {
   .oscars-container h4 {
     font-size: 16px !important;
     padding: 30px 40px 60px 60px;
-  }
-}
-@keyframes floating {
-  0% {
-    transform: translateY(4px) rotate(-1deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(1deg);
-  }
-  100% {
-    transform: translateY(4px) rotate(-1deg);
-  }
-}
-@keyframes fade-in {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes fade-out {
-  0% {
-    transform: translateY(-70px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes spinning-flowers {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }/*# sourceMappingURL=style.css.map */
